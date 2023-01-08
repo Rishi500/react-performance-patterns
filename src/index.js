@@ -2,10 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ImportOnInteraction from "./ImportOnInteration";
+import ImportOnVisibility from "./ImportOnVisibility";
 const router = createBrowserRouter([
   {
     path: "/1",
     element: <ImportOnInteraction/>,
+  },
+  {
+    path: "/2",
+    element: <ImportOnVisibility/>,
   },
 ]);
 
