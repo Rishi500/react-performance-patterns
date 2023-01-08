@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const ImportOnInteraction = React.lazy(() => import("ImportOnInteration"));
-const ImportOnVisibility = React.lazy(() => import("ImportOnVisibility"));
+const ImportOnInteraction = React.lazy(() => import("./ImportOnInteration"));
+const ImportOnVisibility = React.lazy(() => import("./ImportOnVisibility"));
 const router = createBrowserRouter([
   {
     path: "/1",
