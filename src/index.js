@@ -1,16 +1,24 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ImportOnInteraction from "./ImportOnInteration";
-import ImportOnVisibility from "./ImportOnVisibility";
+const ImportOnInteraction = React.lazy(() => import("ImportOnInteration"));
+const ImportOnVisibility = React.lazy(() => import("ImportOnVisibility"));
 const router = createBrowserRouter([
   {
     path: "/1",
-    element: <ImportOnInteraction/>,
+    element: (
+      <React.Suspense fallback={<div>Loading ImportOnInteraction page</div>}>
+        <ImportOnInteraction />
+      </React.Suspense>
+    ),
   },
   {
     path: "/2",
-    element: <ImportOnVisibility/>,
+    element: (
+      <React.Suspense fallback={<div>Loading ImportOnVisibility page</div>}>
+        <ImportOnVisibility />
+      </React.Suspense>
+    ),
   },
 ]);
 
